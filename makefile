@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -g -Wall
-LDFLAGS = -pthread -ldmbcs-kraken-api -lcurlpp -lcurl -lssl -lcrypto -Wl,--verbose
+LDFLAGS = -pthread -L./resources/dmbcs -ldmbcs-kraken-api -lcurlpp -lcurl -lssl -lcrypto -Wl,--verbose
 TESTFLAGS = -lgtest -lgtest_main
 
 # Directories
