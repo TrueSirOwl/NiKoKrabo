@@ -8,3 +8,9 @@ TEST(addOne, functions){
 }    return RUN_ALL_TESTS();  // This will run all test cases
 ```
 
+
+For setup you need:
+- libgtest-dev
+
+
+
