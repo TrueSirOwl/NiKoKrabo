@@ -11,7 +11,7 @@ BUILD_DIR = build
 APP_NAME = my_application
 
 # Simdjson
-SIMDJSON = resources/simdjson/simdjson.cpp
+SIMDJSON_SRC = resources/simdjson/simdjson.cpp
 
 # Application source files
 APP_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
