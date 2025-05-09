@@ -1,6 +1,7 @@
 CXX = g++
 CXXFLAGS = -g -Wall
-LDFLAGS = -pthread -lgtest -lgtest_main -L/resources/dmbcs -ldmbcs-kraken-api -L/usr/local/lib -lcurlpp -lcurl -lssl -lcrypto
+LDFLAGS = -pthread -L/resources/dmbcs -ldmbcs-kraken-api -lcurlpp -lcurl -lssl -lcrypto
+TESTFLAGS = -lgtest -lgtest_main
 
 # Directories
 SRC_DIR = src
@@ -35,7 +36,7 @@ $(APP_EXEC): $(APP_SOURCES) $(SIMDJSON)
 # Compile the tests
 $(TEST_EXEC): $(TEST_SOURCES)
 	@mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS) $(TESTFLAGS)
 
 # Run the application
 run: $(APP_EXEC)
