@@ -1,12 +1,15 @@
 CXX = g++
 CXXFLAGS = -g -Wall
-LDFLAGS = -pthread -lgtest -lgtest_main
+LDFLAGS = -pthread -lgtest -lgtest_main -L/resources/dmbcs -ldmbcs-kraken-api -L/usr/local/lib -lcurlpp -lcurl -lssl -lcrypto
 
 # Directories
 SRC_DIR = src
 TEST_DIR = test
 BUILD_DIR = build
 APP_NAME = my_application
+
+# Simdjson
+SIMDJSON = resources/simdjson/simdjson.cpp
 
 # Application source files
 APP_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
@@ -25,7 +28,7 @@ TEST_EXEC = $(BUILD_DIR)/run_tests
 all: $(APP_EXEC) $(TEST_EXEC)
 
 # Compile the application
-$(APP_EXEC): $(APP_SOURCES)
+$(APP_EXEC): $(APP_SOURCES) $(SIMDJSON)
 	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
