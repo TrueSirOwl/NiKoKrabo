@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 	auto  K  =  DMBCS::Kraken_API  {"<your-key>", "<your-secret>"};
 
 	// pad the result of ticker_info for processing with simdjson
-	jsonString = simdjson::padded_string(K.ticker_info ("XXBTZUSD"));
+	jsonString = simdjson::padded_string(K.ticker_info ("XRPEUR"));
 
 	std::cout << jsonString << "\n----------------------" << std::endl;
 
